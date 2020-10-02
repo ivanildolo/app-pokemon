@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CardComponent } from './pages/card/card.component';
 import { CardsComponent } from './pages/cards/cards.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: 'cards', component: CardsComponent },
-  { path: 'card', component: CardComponent },
-  { path: '**', component: CardsComponent },
+  { path: 'card/:id', component: CardComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

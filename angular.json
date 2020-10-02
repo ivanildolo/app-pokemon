@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "app-pokemon"
+    }
+  },
+  "defaultProject": "app-pokemon",
+  "cli": {
+    "analytics": "61850ef0-17ee-4749-98cd-85fa1499f553"
+  }
 }
