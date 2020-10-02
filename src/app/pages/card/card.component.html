@@ -1,7 +1,22 @@
-<h1 class="title">Pokemon: {{card.name}}</h1>
+<h1 class="title">Pokemon: Id:{{card.id}} - {{card.name}}</h1>
 <div class="container">
       <img width="400" [src]="card.imageUrl" />
       <div>
-          
+          <table>
+                <thead>
+                      <tr>
+                            <th>Typos</th>
+                            <th>Ataques</th>
+                            <th>Resistências</th>
+                            <th>Fraquezas</th>
+                      </tr>
+                </thead>
+                <tbody>
+                      <tr>
+                            <td>{{card.types}}</td>
+                      </tr>
+                </tbody>
+
+          </table>
       </div>
 </div>

@@ -1,8 +1,10 @@
-<h1 class="title">Cards Pokemon</h1>
-<div class="container">
-  <div class="card" *ngFor="let card of cards; index as i">
-    <a [routerLink]="['/card', card.id]" routerLinkActive="active">
-      <img [src]="card.imageUrl" />
-    </a>
+<div>
+  <h1 class="title">Cards Pokemon</h1>
+  <div class="container">
+    <div class="card" *ngFor="let card of cards; index as i">
+      <a [routerLink]="['/card', card.id]" routerLinkActive="active">
+        <img [src]="card.imageUrl" />
+      </a>
+    </div>
   </div>
 </div>

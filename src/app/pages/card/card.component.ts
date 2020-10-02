@@ -9,7 +9,7 @@ import { CardModel, CardsModel } from 'src/app/models/card-model';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-  public card: CardModel = null;
+  public card: Partial<CardModel> = {};
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
