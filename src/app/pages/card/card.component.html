@@ -1,5 +1,5 @@
 <a routerLink="/cards" class="btn-go-back">
-  <img width="60" src="../../../assets/images/go-back.png" alt="" />
+  <img width="60" src="assets/images/go-back.png" alt="" />
 </a>
 <h1 class="title">Pokemon</h1>
 <app-activity-indicator *ngIf="loading"></app-activity-indicator>
@@ -14,8 +14,6 @@
           <th>Id</th>
           <th>Name</th>
           <th>Type(s)</th>
-          <th>Resistances</th>
-          <th>Weaknesses</th>
         </tr>
       </thead>
       <tbody>
@@ -23,6 +21,19 @@
           <td class="nowrap">{{ card.id }}</td>
           <td>{{ card.name }}</td>
           <td>{{ card.types }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Resistances</th>
+          <th>Weaknesses</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
           <td>{{ card.hp }}</td>
           <td>
             <span *ngFor="let weaknesses of card.weaknesses"
@@ -32,6 +43,7 @@
         </tr>
       </tbody>
     </table>
+    
     <table>
       <thead>
         <tr>
