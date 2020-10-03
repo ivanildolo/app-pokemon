@@ -1,5 +1,6 @@
 <div>
   <h1 class="title">Cards Pokemon</h1>
+  <app-activity-indicator *ngIf="loading"></app-activity-indicator>
   <div class="container">
     <input type="text" (keyup)="onChangeSearch($event)" placeholder="Search by card name" class="input-search"/>
   </div>
@@ -8,7 +9,7 @@
   </div>
   <div class="container">
     <div class="card" *ngFor="let card of cards | sortBy: 'name'; index as i">
-      <a [routerLink]="['/card', card.id]" routerLinkActive="active">
+      <a [routerLink]="['/card', card.id]">
         <img [src]="card.imageUrl" />
       </a>
     </div>

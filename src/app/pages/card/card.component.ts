@@ -10,17 +10,19 @@ import { CardModel, CardsModel } from 'src/app/models/card-model';
 })
 export class CardComponent implements OnInit {
   public card: Partial<CardModel> = {};
+  public loading: boolean = false;
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
-
+    this.loading = true;
     this.http
       .get<CardsModel>(`https://api.pokemontcg.io/v1/cards?id=${id}`)
       .subscribe((response: CardsModel) => {
         const [card] = response.cards;
         this.card = card;
         console.log(card);
+        this.loading = false;
       });
   }
 }

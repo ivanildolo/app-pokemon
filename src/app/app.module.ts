@@ -8,6 +8,7 @@ import { CardsComponent } from './pages/cards/cards.component';
 import { CardComponent } from './pages/card/card.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SortByPipe } from './pipes/sort-by.pipe';
+import { ActivityIndicatorComponent } from './components/activity-indicator/activity-indicator.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SortByPipe } from './pipes/sort-by.pipe';
     CardsComponent,
     CardComponent,
     NotFoundComponent,
-    SortByPipe
+    SortByPipe,
+    ActivityIndicatorComponent
   ],
   imports: [
     BrowserModule,

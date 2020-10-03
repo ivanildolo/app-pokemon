@@ -1,3 +1,8 @@
+.btn-go-back{
+  position: absolute;
+  top: 16px;
+  left: 60px;
+}
 .title{
     text-align: center;
 }
@@ -6,6 +11,7 @@
     flex-wrap: wrap;
     justify-content: center;
     .item{
+        max-width: 600px;
         flex: 1;
         padding: 10px;
     }
