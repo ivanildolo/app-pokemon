@@ -30,8 +30,6 @@ export class CardsComponent implements OnInit {
     this.httpService.getCards(this.filter)
       .subscribe((response: CardsModel) => {
         this.cards = response.cards;
-        console.log(this.cards);
-        
         this.loading = false;
       });
   }
