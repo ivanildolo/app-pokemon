@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CardsModel, CardModel } from 'src/app/models/card-model';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-cards',
@@ -13,7 +13,7 @@ export class CardsComponent implements OnInit {
   public cards: CardModel[] = [];
   public searchChanged: Subject<string> = new Subject<string>();
   public loading: boolean = false;
-  constructor(private http: HttpClient) {}
+  constructor(private httpService: HttpService) {}
 
   public onChangeSearch(event: any) {
     console.log(event.target.value);
@@ -21,12 +21,15 @@ export class CardsComponent implements OnInit {
   }
 
   public getCards(searchName: string) {
+    let filter = {
+      name: searchName,
+      page: 1,
+      pageSize: 100
+    }
     this.loading = true;
-    this.http
-      .get<CardsModel>(`https://api.pokemontcg.io/v1/cards?name=${searchName}&page=1&pageSize=100`)
+    this.httpService.getCards(filter)
       .subscribe((response: CardsModel) => {
         this.cards = response.cards;
-        console.log(this.cards);
         this.loading = false;
       });
   }
