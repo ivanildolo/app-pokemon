@@ -12,6 +12,7 @@ import { Subject } from 'rxjs';
 export class CardsComponent implements OnInit {
   public cards: CardModel[] = [];
   public searchChanged: Subject<string> = new Subject<string>();
+  public loading: boolean = false;
   constructor(private http: HttpClient) {}
 
   public onChangeSearch(event: any) {
@@ -20,11 +21,13 @@ export class CardsComponent implements OnInit {
   }
 
   public getCards(searchName: string) {
+    this.loading = true;
     this.http
       .get<CardsModel>(`https://api.pokemontcg.io/v1/cards?name=${searchName}&page=1&pageSize=100`)
       .subscribe((response: CardsModel) => {
         this.cards = response.cards;
         console.log(this.cards);
+        this.loading = false;
       });
   }
 

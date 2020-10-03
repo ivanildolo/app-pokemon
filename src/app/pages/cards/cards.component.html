@@ -1,7 +1,10 @@
 <div>
   <h1 class="title">Cards Pokemon</h1>
   <div class="container">
-    <input type="text" (keyup)="onChangeSearch($event)" placeholder="Digite e pressione enter" class="input-search"/>
+    <input type="text" (keyup)="onChangeSearch($event)" placeholder="Search by card name" class="input-search"/>
+  </div>
+  <div class="container">
+    <div class="info" *ngIf="cards.length === 0 && !loading">Not a card with that name was found!</div>
   </div>
   <div class="container">
     <div class="card" *ngFor="let card of cards | sortBy: 'name'; index as i">
