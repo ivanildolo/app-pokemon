@@ -4,7 +4,9 @@
 <h1 class="title">Pokemon</h1>
 <app-activity-indicator *ngIf="loading"></app-activity-indicator>
 <div class="container">
-  <img class="item" width="100%" [src]="card.imageUrlHiRes" />
+  <div class="item">
+    <img width="100%" [src]="card.imageUrlHiRes" />
+  </div>
   <div class="item">
     <table>
       <thead>
