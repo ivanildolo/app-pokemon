@@ -1,6 +1,6 @@
 # AppPokemon
 
-[Link para o site app-pokemon](https://ivanildolo.github.io/app-pokemon/cards)
+[Link para o site app-pokemon](https://ivanildolo.github.io/app-pokemon/#/cards)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
 
