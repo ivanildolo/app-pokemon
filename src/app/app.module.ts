@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardsComponent } from './pages/cards/cards.component';
 import { CardComponent } from './pages/card/card.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
     CardComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SortByPipe
   ],
   imports: [
     BrowserModule,
