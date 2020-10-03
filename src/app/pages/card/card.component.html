@@ -1,22 +1,48 @@
-<h1 class="title">Pokemon: Id:{{card.id}} - {{card.name}}</h1>
+<h1 class="title">Pokemon</h1>
 <div class="container">
-      <img width="400" [src]="card.imageUrl" />
-      <div>
-          <table>
-                <thead>
-                      <tr>
-                            <th>Typos</th>
-                            <th>Ataques</th>
-                            <th>Resistências</th>
-                            <th>Fraquezas</th>
-                      </tr>
-                </thead>
-                <tbody>
-                      <tr>
-                            <td>{{card.types}}</td>
-                      </tr>
-                </tbody>
-
-          </table>
-      </div>
+  <img class="item" width="100%" [src]="card.imageUrlHiRes" />
+  <div class="item">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Tipos</th>
+          <th>Resistências</th>
+          <th>Fraquezas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ card.id }}</td>
+          <td>{{ card.name }}</td>
+          <td>{{ card.types }}</td>
+          <td>{{ card.hp }}</td>
+          <td>
+            <span *ngFor="let weaknesses of card.weaknesses"
+              >Type: {{ weaknesses.type }} Value: {{ weaknesses.value }}</span
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Ataque</th>
+          <th>Custo de mana</th>
+          <th>Dano</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let attack of card.attacks">
+          <td>{{ attack.name }}</td>
+          <td>{{ attack.convertedEnergyCost }}</td>
+          <td>{{ attack.damage }}</td>
+          <td>{{ attack.text }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
